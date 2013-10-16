@@ -22,13 +22,13 @@ function show_feeds(data){
 	
 	  var items = [];
 	  $.each( data, function( key, val ) {
-	  	items.push("<h4>"+ (key+1) +"</h4>")
+	  	items.push("<div class='box'>")
 	  	$.each( val, function( key1, val1 ) {
 	    items.push( "<li id='" + key1 + "'>" + key1+ " = " +val1 + "</li>" );
 	    });
-
+        items.push("</div>")
 	  });
-	 
+	
 	  $( "<ul/>", {
 	    "class": "my-new-list",
 	    html: items.join( "" )

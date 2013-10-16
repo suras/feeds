@@ -12,3 +12,14 @@
  *= require_self
  *= require_tree .
  */
+ 
+ .box {
+	border: solid;
+background-color: wheat;
+padding: 22px;
+width: 17%;
+float: left;
+display: inline-block;
+height: 27%;
+margin: 10px;
+ }
