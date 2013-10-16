@@ -1,11 +1,13 @@
 Carfeeds::Application.routes.draw do
  
-
+  root :to => "feeds#home"
   devise_for :users
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
+  get "/home", :to => "feeds#home"
   resources :feeds
+
+
 
 
 

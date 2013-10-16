@@ -1,0 +1,42 @@
+<%= subscribe_to "/stock_feeds" %>
+<script>
+PrivatePub.subscribe("/stock_feeds", function(data) {
+ 
+  $("#list").html(" ");
+   show_feeds(data);
+
+});
+
+
+$(document).ready(function(){
+  
+ $.getJSON( "/feeds.json", function( data ) {
+	   show_feeds(data)
+	});
+
+});
+
+
+
+function show_feeds(data){
+	
+	  var items = [];
+	  $.each( data, function( key, val ) {
+	  	items.push("<h4>"+ (key+1) +"</h4>")
+	  	$.each( val, function( key1, val1 ) {
+	    items.push( "<li id='" + key1 + "'>" + key1+ " = " +val1 + "</li>" );
+	    });
+
+	  });
+	 
+	  $( "<ul/>", {
+	    "class": "my-new-list",
+	    html: items.join( "" )
+	  }).appendTo( "#list" );
+	
+
+
+}
+</script>
+<h4>Live Feeds</h4>
+<span id= "list"></span>

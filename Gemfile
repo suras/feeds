@@ -33,7 +33,7 @@ group :development do
    
    gem 'quiet_assets'
 end
-
+ gem "net-ping", "~> 1.7.1"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
